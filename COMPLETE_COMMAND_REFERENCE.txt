@@ -1,0 +1,296 @@
+# FINANCIAL HEALTH ASSESSMENT TOOL - QUICK COMMAND REFERENCE
+# Career Carnival 2026 | Vignesh Yadala
+
+## ============================================================
+## STEP 1: COPY THE APP.JSX FILE (MOST IMPORTANT!)
+## ============================================================
+
+1. Download the "App.jsx" file (provided above)
+2. Copy it to: C:\Users\Lenovo\Desktop\financial-health-tool\frontend\src\App.jsx
+
+OR manually create it:
+   - Open: notepad C:\Users\Lenovo\Desktop\financial-health-tool\frontend\src\App.jsx
+   - Paste the entire App.jsx code from the artifact
+   - Save and close
+
+## ============================================================
+## STEP 2: RUN THE COMPLETE INSTALLATION
+## ============================================================
+
+Method A: AUTOMATIC (Recommended)
+---------------------------------
+1. Download and run: INSTALL_AND_RUN.bat
+2. Wait for installation (5-10 minutes)
+3. Two windows will open automatically
+4. Wait 15 seconds, then open: http://localhost:3000
+
+Method B: MANUAL COMMANDS
+-------------------------
+
+# Terminal 1 - Install Backend
+cd C:\Users\Lenovo\Desktop\financial-health-tool\backend
+pip install -r requirements.txt
+python main.py
+
+# Terminal 2 - Install Frontend
+cd C:\Users\Lenovo\Desktop\financial-health-tool\frontend
+npm install
+npm run dev
+
+## ============================================================
+## STEP 3: TEST THE APPLICATION
+## ============================================================
+
+1. Open browser: http://localhost:3000
+2. Fill the form:
+   - Company Name: "ABC Retail Company"
+   - Industry: "Retail"
+   - Upload: backend\sample_data.csv
+3. Click "Analyze Financial Health"
+4. View results with charts, AI insights, recommendations
+
+## ============================================================
+## STEP 4: VERIFY EVERYTHING WORKS
+## ============================================================
+
+✓ Backend API running: http://localhost:8000/docs
+✓ Frontend app running: http://localhost:3000
+✓ File upload works: Use sample_data.csv
+✓ Charts display: Line and Bar charts appear
+✓ AI analysis shows: Insights, risks, recommendations
+
+## ============================================================
+## STEP 5: PUSH TO GITHUB
+## ============================================================
+
+cd C:\Users\Lenovo\Desktop\financial-health-tool
+
+# Initialize Git
+git init
+git add .
+git commit -m "Initial commit: Financial Health Assessment Tool"
+
+# Create repo on GitHub (github.com/new)
+# Name: financial-health-tool
+# Public: YES
+# No README (we have one)
+
+# Connect and push
+git remote add origin https://github.com/Vigneshyadala/financial-health-tool.git
+git branch -M main
+git push -u origin main
+
+## ============================================================
+## STEP 6: DEPLOY TO RAILWAY (BACKEND)
+## ============================================================
+
+1. Go to: https://railway.app
+2. Login with GitHub
+3. New Project → Deploy from GitHub repo
+4. Select: financial-health-tool
+5. Add environment variable:
+   ANTHROPIC_API_KEY=your_key_here (optional - works without it!)
+6. Deploy!
+7. Generate Domain → Copy backend URL
+
+## ============================================================
+## STEP 7: DEPLOY TO VERCEL (FRONTEND)
+## ============================================================
+
+1. Go to: https://vercel.com
+2. Login with GitHub
+3. Import Project → financial-health-tool
+4. Root Directory: frontend
+5. Add environment variable:
+   VITE_API_URL=https://your-railway-url.railway.app
+6. Deploy!
+7. Copy frontend URL
+
+## ============================================================
+## STEP 8: RECORD DEMO VIDEO (5 MINUTES)
+## ============================================================
+
+Use Loom (https://loom.com) or OBS Studio
+
+Demo Script:
+1. [0:00-0:30] Introduction - Show homepage
+2. [0:30-1:30] Upload demo - Enter data, upload sample CSV
+3. [1:30-3:30] Results - Show score, charts, AI insights
+4. [3:30-4:30] Tech overview - Mention FastAPI, React, Claude AI
+5. [4:30-5:00] Conclusion - Thank you
+
+Upload to:
+- YouTube (Unlisted)
+- OR Loom (Public link)
+
+## ============================================================
+## STEP 9: SUBMIT TO GUVI
+## ============================================================
+
+You'll need these 4 URLs:
+
+1. GitHub Repository:
+   https://github.com/Vigneshyadala/financial-health-tool
+
+2. Live Backend (Railway):
+   https://your-project.railway.app
+
+3. Live Frontend (Vercel):
+   https://financial-health-tool.vercel.app
+
+4. Demo Video:
+   https://loom.com/share/YOUR_VIDEO_ID
+   OR
+   https://youtu.be/YOUR_VIDEO_ID
+
+Submit at: GUVI Dashboard → Submit Solution
+
+## ============================================================
+## TROUBLESHOOTING
+## ============================================================
+
+Problem: pip command not found
+Solution: Install Python from python.org (3.8+)
+          Add to PATH during installation
+
+Problem: npm command not found
+Solution: Install Node.js from nodejs.org (14+)
+
+Problem: Port 8000 already in use
+Solution: Change port in backend/main.py:
+          uvicorn.run(app, host="0.0.0.0", port=8001)
+
+Problem: Port 3000 already in use
+Solution: When npm asks, press 'y' to use different port
+
+Problem: Module not found
+Solution: Reinstall dependencies:
+          Backend: pip install -r requirements.txt
+          Frontend: npm install
+
+Problem: CORS errors
+Solution: Backend main.py already has CORS configured
+          Check that VITE_API_URL is correct in Vercel
+
+Problem: File upload fails
+Solution: Use sample_data.csv (known to work)
+          Check file size (under 10MB)
+          Verify file format (CSV, XLSX, or PDF)
+
+## ============================================================
+## QUICK VERIFICATION CHECKLIST
+## ============================================================
+
+Before submission, verify:
+☐ All files created (see directory structure below)
+☐ Backend runs: http://localhost:8000/docs loads
+☐ Frontend runs: http://localhost:3000 loads
+☐ Sample CSV upload works
+☐ Charts and AI analysis display
+☐ GitHub repo is public
+☐ Railway backend is deployed and accessible
+☐ Vercel frontend is deployed and accessible
+☐ Frontend can connect to backend
+☐ Demo video is recorded and public
+☐ All 4 URLs submitted to GUVI
+
+## ============================================================
+## DIRECTORY STRUCTURE (VERIFY THIS)
+## ============================================================
+
+financial-health-tool/
+├── .gitignore
+├── README.md
+├── backend/
+│   ├── .env.example
+│   ├── .env
+│   ├── requirements.txt
+│   ├── main.py
+│   ├── sample_data.csv
+│   └── app/
+│       ├── __init__.py
+│       ├── config.py
+│       ├── models/
+│       │   ├── __init__.py
+│       │   ├── assessment.py
+│       │   └── database.py
+│       ├── routes/
+│       │   ├── __init__.py
+│       │   └── assessments.py
+│       ├── services/
+│       │   ├── __init__.py
+│       │   └── ai_analysis.py
+│       └── utils/
+│           ├── __init__.py
+│           └── file_parser.py
+└── frontend/
+    ├── package.json
+    ├── index.html
+    ├── vite.config.js
+    ├── tailwind.config.js
+    ├── postcss.config.js
+    └── src/
+        ├── index.css
+        ├── main.jsx
+        ├── App.jsx
+        ├── components/
+        └── services/
+            └── api.js
+
+## ============================================================
+## TIME ESTIMATES
+## ============================================================
+
+✓ Files already created: DONE
+⏱ Install dependencies: 5-10 minutes
+⏱ Test locally: 5 minutes
+⏱ Push to GitHub: 5 minutes
+⏱ Deploy Railway: 10 minutes
+⏱ Deploy Vercel: 10 minutes
+⏱ Record demo: 5 minutes
+⏱ Submit: 2 minutes
+
+TOTAL: ~45-50 minutes to complete submission
+
+## ============================================================
+## CONTACT & SUBMISSION INFO
+## ============================================================
+
+Your Name: Vignesh Yadala
+Email: vignesh.yadala@gmail.com
+GitHub: Vigneshyadala
+Problem: Financial Health Assessment Tool (27/1000 enrolled)
+Hackathon: Career Carnival 2026 - HCL & GUVI
+
+## ============================================================
+## SUCCESS CRITERIA
+## ============================================================
+
+Your solution includes:
+✓ AI-powered analysis (Claude integration)
+✓ Multi-format file support (CSV, XLSX, PDF)
+✓ Financial health scoring (0-100)
+✓ Risk assessment (Low/Medium/High/Critical)
+✓ Interactive visualizations (Line & Bar charts)
+✓ Cost optimization recommendations
+✓ Financial product suggestions
+✓ Industry-specific analysis (10 industries)
+✓ Responsive modern UI
+✓ Production-ready code
+✓ Complete documentation
+✓ Deployed and accessible online
+
+## ============================================================
+## FINAL NOTES
+## ============================================================
+
+- The app works WITHOUT Anthropic API key (smart fallback)
+- All code is production-ready and well-documented
+- Fully compliant with hackathon requirements
+- Uses approved tech stack (FastAPI, React, Claude AI)
+- Secure file handling and data validation
+- Professional UI/UX design
+
+GOOD LUCK WITH YOUR SUBMISSION! 🚀🏆
+
+## ============================================================

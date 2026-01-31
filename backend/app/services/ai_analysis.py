@@ -1,10 +1,11 @@
+from anthropic import Anthropic
 from app.config import settings
 from typing import Dict, Any, List
 import json
 
 class AIAnalysisService:
     def __init__(self):
-        self.client = None  # Using rule-based analysis without AI
+        self.client = Anthropic(api_key=settings.anthropic_api_key) if settings.anthropic_api_key else None
     
     def analyze_financial_health(self, financial_data: Dict[str, Any], company_name: str, industry: str) -> Dict[str, Any]:
         """Generate AI-powered financial health analysis"""
